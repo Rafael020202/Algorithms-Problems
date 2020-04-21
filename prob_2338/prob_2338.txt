@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+  char str[50];
+  int i = 0,ctrLines = 0, n = 0, qtdLines[50];
+  int ctrPoints = 0,n2 = 0,qtdPoints[50];
+
+  scanf("%s",str);
+  while(i < strlen(str)){
+      if(str[i] == '='){
+        ctrLines++;
+        qtdLines[n] = ctrLines;
+        i++;
+      }
+      else{
+        while(str[i] == '.'){
+            ctrPoints++;
+            qtdPoints[n2] = ctrPoints;
+            i++;
+        }
+        n += 1;
+        n2 += 1;
+        ctrPoints = 0;
+        ctrLines = 0;
+      }
+    }
+  for(i = 0; i <= n;i++){
+     if(qtdLines[i] == 3 && qtdPoints[i] != 3){
+        if(qtdLines[i] == 3)
+            printf("-");
+        else
+            printf(".");
+     }
+     
+     
+
+  }
+
+
+  return 0;
+}
